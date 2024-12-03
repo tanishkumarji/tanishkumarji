@@ -5,8 +5,9 @@ int queue[MAX_SIZE],rear=-1,front=0;
 void Insert();
 void Delete1();
 void Display();
-void main(){
+void exit1();
     int choice;
+void main(){
     do{
         printf("\n---------------------------");
         printf("\n--------QUEUE---------");
@@ -25,10 +26,17 @@ void main(){
         case 3:
             Display();
             break;
+        case 4:
+            exit1();
+            break;
+        default:
+        printf("invalid choice");
         }
+
     }
     while(choice!=4);
-getch();
+    
+
 }
 void Insert(){
     int n;
@@ -63,5 +71,11 @@ void Display(){
         for(int i=front;i<=rear;i++){
             printf("%d ",queue[i]);
         }
+    }
+}
+void exit1(){
+    if(choice==4){
+        printf("exited");
+        getch();
     }
 }
